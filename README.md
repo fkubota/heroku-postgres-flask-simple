@@ -1,9 +1,9 @@
 ref: https://techacademy.jp/magazine/26403
 
 ## app
-app name:      # heroku-flask-simple-api
-url: https:    # //heroku-flask-simple-api.herokuapp.com/
-git: https:    # //git.heroku.com/heroku-flask-simple-api.git
+app name: heroku-postgres-flask-simple
+url: https://heroku-postgres-flask-simple.herokuapp.com/
+git: https://git.heroku.com/heroku-postgres-flask-simple.git
 
 - check
 	- curl: curl localhost:5002/myapi curl -d "arg01=hello_flask"
