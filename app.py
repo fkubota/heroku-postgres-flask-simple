@@ -30,9 +30,7 @@ class MyApi(Resource):
         val_val = val + ' ---> flask'
 
         # postgres
-        engine = create_engine('postgresql://{user}: \
-                                {password}@{host}: \
-                                {port}/{database}'.format(**connection_config))
+        engine = create_engine('postgresql://{user}:{password}@{host}:{port}/{database}'.format(**connection_config))
 
         # read sql
         print('read now')
