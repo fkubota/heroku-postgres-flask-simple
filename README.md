@@ -6,4 +6,4 @@ url: https://heroku-postgres-flask-simple.herokuapp.com/
 git: https://git.heroku.com/heroku-postgres-flask-simple.git
 
 - check
-	- curl: curl localhost:5002/myapi curl -d "arg01=hello_flask"
+	- curl: curl localhost:5002/myapi -d "arg01=hello_flask"
