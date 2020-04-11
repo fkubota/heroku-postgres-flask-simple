@@ -10,7 +10,7 @@ api = Api(app)
 # Require a parser to parse our POST request.
 parser = reqparse.RequestParser()
 parser.add_argument("arg01")
-
+df = df
 
 class MyApi(Resource):
     def post(self):
