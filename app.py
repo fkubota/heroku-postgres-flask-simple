@@ -4,6 +4,7 @@ from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 import pandas as pd
 from sqlalchemy import create_engine
+import psycopg2
 
 app = Flask(__name__)
 CORS(app)
@@ -30,6 +31,8 @@ class MyApi(Resource):
         val_val = val + ' ---> flask'
 
         # postgres
+        print('create engine')
+        connection = psycopg2.connect(**connection_config)
         engine = create_engine('postgresql://{user}:{password}@{host}:{port}/{database}'.format(**connection_config))
 
         # read sql
