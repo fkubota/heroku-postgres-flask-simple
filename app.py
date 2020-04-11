@@ -17,8 +17,8 @@ parser.add_argument("arg01")
 connection_config = {
     'user': 'xxgvdlopjhsvsk',
     'password': '38078c4a27e141748248c1c42b0ec966549d95df7a51537eb55e96a426fd035b',
-    # 'host': 'ec2-54-147-209-121.compute-1.amazonaws.com',
-    # 'port': 'ポート番号', # なくてもOK
+    'host': 'ec2-54-147-209-121.compute-1.amazonaws.com',
+    'port': '5432', # なくてもOK
     'database': 'd2fj6i9l6jq4tu'
 }
 
