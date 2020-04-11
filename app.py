@@ -4,7 +4,7 @@ from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 import pandas as pd
 from sqlalchemy import create_engine
-import psycopg2
+# import psycopg2
 
 app = Flask(__name__)
 CORS(app)
@@ -32,7 +32,7 @@ class MyApi(Resource):
 
         # postgres
         print('create engine')
-        connection = psycopg2.connect(**connection_config)
+        # connection = psycopg2.connect(**connection_config)
         engine = create_engine('postgresql://{user}:{password}@{host}:{port}/{database}'.format(**connection_config))
 
         # read sql
@@ -44,6 +44,9 @@ class MyApi(Resource):
         df_2 = pd.DataFrame([[3.3, 4.4]], columns=['col1', 'col2'])
         df_concat = pd.concat([df, df_2])
         val_val = val_val + " --- df_colname: " + str(df_concat)
+
+        # update
+        df.to_sql('hello_table', engine, if_exists='replace')
 
         return {"after_api": val_val}
 
