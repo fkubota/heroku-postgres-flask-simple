@@ -46,7 +46,7 @@ class MyApi(Resource):
         val_val = val_val + " --- df_colname: " + str(df_concat)
 
         # update
-        df_concat.to_sql('hello_table', engine, if_exists='replace')
+        df_concat.to_sql('hello_table', engine, if_exists='replace', index=False)
 
         return {"after_api": val_val}
 
