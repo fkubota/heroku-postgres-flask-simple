@@ -25,12 +25,15 @@ connection_config = {
 
 class MyApi(Resource):
     def post(self):
+        print('func post')
         # hello
+        print('- parse')
         args = parser.parse_args()
         val = args['arg01']
         val_val = val + ' ---> flask'
 
         # postgres
+        print('- postgres')
         connection = psycopg2.connect(**connection_config)
         df = pd.read_sql(sql='SELECT * FROM hello_table;', con=connection)
         val_val = val_val + " --- df_colname: \n" + str(df)
