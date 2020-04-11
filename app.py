@@ -36,7 +36,9 @@ class MyApi(Resource):
                                 {port}/{database}'.format(**connection_config))
 
         # read sql
+        print('read now')
         df = pd.read_sql(sql='SELECT * FROM hello_table;', con=engine)
+        print('end read_sql')
 
         # edit dataframe
         df_2 = pd.DataFrame([[3.3, 4.4]], columns=['col1', 'col2'])
