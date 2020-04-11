@@ -37,7 +37,11 @@ class MyApi(Resource):
 
         # read sql
         df = pd.read_sql(sql='SELECT * FROM hello_table;', con=engine)
-        val_val = val_val + " --- df_colname: " + str(df)
+
+        # edit dataframe
+        df_2 = pd.DataFrame([[3.3, 4.4]], columns=['col1', 'col2'])
+        df_concat = pd.concat([df, df_2])
+        val_val = val_val + " --- df_colname: " + str(df_concat)
 
         return {"after_api": val_val}
 
